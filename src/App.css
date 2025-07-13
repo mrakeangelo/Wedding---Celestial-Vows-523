@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-navy: #1a1b3a;
+  --moonlight-silver: #c8d3e8;
+  --amethyst: #9b59b6;
+  --rose-gold: #e8b4a0;
+  --midnight-blue: #0f1419;
+  --soft-cream: #f8f6f0;
+  --constellation-glow: rgba(200, 211, 232, 0.8);
+  --star-shimmer: rgba(255, 255, 255, 0.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  transition: all 0.8s ease;
+}
+
+.app.moonlight {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--midnight-blue) 100%);
+  color: var(--moonlight-silver);
+}
+
+.app.starlight {
+  background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #16213e 100%);
+  color: var(--star-shimmer);
+}
+
+.serif-font {
+  font-family: 'Playfair Display', serif;
+}
+
+.constellation-text {
+  background: linear-gradient(45deg, var(--moonlight-silver), var(--rose-gold), var(--amethyst));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cosmic-glow {
+  box-shadow: 0 0 30px rgba(200, 211, 232, 0.3);
+}
+
+.section-padding {
+  padding: 100px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.celestial-button {
+  background: linear-gradient(135deg, var(--amethyst), var(--rose-gold));
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.celestial-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.celestial-button:hover::before {
+  left: 100%;
+}
+
+.celestial-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(155, 89, 182, 0.4);
+}
+
+.floating-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.cosmic-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.cosmic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.zodiac-symbol {
+  font-size: 2rem;
+  color: var(--rose-gold);
+  margin-bottom: 15px;
+}
+
+.star-divider {
+  text-align: center;
+  margin: 60px 0;
+  color: var(--rose-gold);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 20px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .cosmic-card {
+    padding: 20px;
+  }
+}
